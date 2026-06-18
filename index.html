@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0190)file:///C:/Users/%ED%95%9C%EC%9A%B0%EB%A6%AC1/Downloads/%ED%95%9C%EC%9A%B0%EB%A6%AC_%ED%99%94%EC%84%B1%EC%A7%80%EB%B6%80_SNS_%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EB%AA%A8%EC%9D%8C_v2_1.html -->
+<!-- saved from url=(0190)file:///C:/Users/%ED%95%9C%EC%9A%B0%EB%A6%AC1/Downloads/%ED%95%9C%EC%9A%B0%EB%A6%AC_%ED%99%94%EC%84%B1%EC%A7%80%EB%B6%80_SNS_%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EB%AA%A8%EC%9D%8C_v2_2.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,19 +104,26 @@
   }
   .tab-btn {
     flex: 1;
-    padding: 14px 0;
+    padding: 10px 4px;
     border-radius: 12px;
     border: 1.5px solid var(--gray-dark);
     background: var(--card);
     color: var(--gray);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.18s;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 5px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .tab-emoji {
+    font-size: 16px;
+    line-height: 1;
   }
   .tab-btn:hover { border-color: var(--green); color: var(--white); }
   .tab-btn.active {
@@ -426,14 +433,17 @@
 
 <!-- 탭 -->
 <div class="tabs">
-  <button class="tab-btn" onclick="switchTab(&#39;place&#39;, this)">
-    <span class="tab-dot"></span> 📍 네이버 플레이스
+  <button class="tab-btn active" onclick="switchTab(&#39;place&#39;, this)">
+    <span class="tab-emoji">📍</span>
+    <span>네이버<br>플레이스</span>
   </button>
   <button class="tab-btn" onclick="switchTab(&#39;blog&#39;, this)">
-    <span class="tab-dot"></span> 📝 네이버 블로그
+    <span class="tab-emoji">📝</span>
+    <span>네이버<br>블로그</span>
   </button>
-  <button class="tab-btn active" onclick="switchTab(&#39;keywords&#39;, this)" style="border-color:#E8453C;color:#FF9E99;background:rgba(232,69,60,0.06);">
-    <span class="tab-dot" style="background:#E8453C;"></span> 🗺 지역 키워드
+  <button class="tab-btn" onclick="switchTab(&#39;keywords&#39;, this)" style="border-color:#E8453C;color:#FF9E99;background:rgba(232,69,60,0.06);">
+    <span class="tab-emoji">🗺</span>
+    <span>지역<br>키워드</span>
   </button>
 </div>
 
@@ -441,7 +451,7 @@
 <div class="content">
 
   <!-- ══ 플레이스 섹션 ══ -->
-  <div class="section" id="place">
+  <div class="section active" id="place">
     <div class="section-header">
       <h2>📍 네이버 플레이스 프롬프트</h2>
       <p>소개글 · 새소식 · 리뷰 답글 — 정보만 넣으면 AI가 완성합니다</p>
@@ -1017,7 +1027,7 @@
 
 
   <!-- ══ 지역 키워드 섹션 ══ -->
-  <div class="section active" id="keywords">
+  <div class="section" id="keywords">
     <div class="kw-section-header">
       <h2>🗺 지역군별 네이버 주요 검색 키워드</h2>
       <p>학부모가 실제로 검색하는 패턴 · 플레이스 키워드 태그 · 블로그 제목 작성 시 참고하세요</p>
@@ -1071,9 +1081,9 @@
           <div class="kw-zone-subs">병점동 · 기산동 · 진안동 · 반월동 · 기배동 · 화산동</div>
           <div class="kw-heat-bar"><span class="kw-heat-label">학원 수요</span><div class="kw-heat-track"><div class="kw-heat-fill" style="width:72%"></div></div></div>
         </div>
-        <span class="kw-zone-toggle">▴</span>
+        <span class="kw-zone-toggle">▾</span>
       </div>
-      <div class="kw-zone-body open">
+      <div class="kw-zone-body">
         <div class="kw-row2"><span class="kw-row-label">병점 공통</span><div class="kw-chips2"><span class="chip2 p1">병점논술</span><span class="chip2 p1">병점독서논술</span><span class="chip2 p1">병점독서토론</span><span class="chip2 p2">병점역논술</span><span class="chip2 p2">병점초등논술</span></div></div>
         <div class="kw-row2"><span class="kw-row-label">기산동·진안동</span><div class="kw-chips2"><span class="chip2 p1">기산동논술</span><span class="chip2 p1">진안동논술</span><span class="chip2 p2">병점논술</span><span class="chip2 warn">※ 행정동명보다 "병점"으로 통칭 검색 많음</span></div></div>
         <div class="kw-row2"><span class="kw-row-label">반월동<br>(신동탄·신영통)</span><div class="kw-chips2"><span class="chip2 p1">신동탄논술</span><span class="chip2 p1">신영통논술</span><span class="chip2 p2">반월동논술</span><span class="chip2 warn">※ "반월" 단독 → 안산 반월 혼동 주의</span></div></div>
@@ -1091,9 +1101,9 @@
           <div class="kw-zone-subs">향남읍 · 봉담읍 · 송산면 · 새솔동</div>
           <div class="kw-heat-bar"><span class="kw-heat-label">학원 수요</span><div class="kw-heat-track"><div class="kw-heat-fill" style="width:44%"></div></div></div>
         </div>
-        <span class="kw-zone-toggle">▴</span>
+        <span class="kw-zone-toggle">▾</span>
       </div>
-      <div class="kw-zone-body open">
+      <div class="kw-zone-body">
         <div class="kw-row2"><span class="kw-row-label">향남읍</span><div class="kw-chips2"><span class="chip2 p1">향남논술</span><span class="chip2 p1">향남독서논술</span><span class="chip2 p2">향남읍논술</span><span class="chip2 p2">화성향남논술</span><span class="chip2 warn">발안논술 (구 지명, 일부 검색)</span></div></div>
         <div class="kw-row2"><span class="kw-row-label">봉담읍</span><div class="kw-chips2"><span class="chip2 p1">봉담논술</span><span class="chip2 p1">봉담독서논술</span><span class="chip2 p2">봉담읍논술</span><span class="chip2 warn">수원봉담논술 (수원 생활권 혼용)</span></div></div>
         <div class="kw-row2"><span class="kw-row-label">새솔동<br>(송산그린시티)</span><div class="kw-chips2"><span class="chip2 p1">새솔동논술</span><span class="chip2 p1">송산그린시티논술</span><span class="chip2 p2">화성새솔논술</span><span class="chip2 warn">※ "새솔"+"송산그린시티" 둘 다 등록 필수</span></div></div>
